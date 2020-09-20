@@ -17,9 +17,9 @@ class UserProfileManager(BaseUserManager):
         user.set_password(password)
         user.save(using=self._db)
 
-        return users
+        return user
 
-    def create_superuser(self, email, name, pasword):
+    def create_superuser(self, email, name, password):
         '''Create and save a new superuser with given details'''
         user = self.create_user(email, name, password)
 
